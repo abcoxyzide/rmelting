@@ -1421,6 +1421,11 @@ melting <- function(sequence, comp.sequence = NULL,
 
   attr(out, "command") <- paste(opts, collapse = " ")
 
+  # prog gets progressively slower during iteration; suspected memory leak problem
+  # attempt to close objects, not sure if it works
+  meltj <- NULL
+  optionManager <- NULL
+  
   # Set Class
   class(out) <- "melting"
 
