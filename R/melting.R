@@ -1423,8 +1423,9 @@ melting <- function(sequence, comp.sequence = NULL,
 
   # prog gets progressively slower during iteration; suspected memory leak problem
   # attempt to close objects, not sure if it works
-  meltj <- NULL
-  optionManager <- NULL
+  # meltj <- NULL
+  # optionManager <- NULL
+  rm(meltj, optionManager)
   
   # Set Class
   class(out) <- "melting"
